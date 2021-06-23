@@ -1,6 +1,9 @@
-const app = require('./config.js');
+const app = require('./config.js')
+const http = require('http')
+const port = process.env.PORT || 5000
 
-const port = process.env.PORT || 5000;
-app.listen(port, function ()  {
-  console.log(`Listening on Port ${port}`);
-});
+const server = http.createServer(app)
+
+server.listen(port, () => {
+  console.log(`Listening on Port ${port}`)
+})
